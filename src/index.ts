@@ -6,6 +6,10 @@ const app = new Hono()
 
 const URL = "https://lukkarit.haaga-helia.fi/rest/realization/";
 
+app.get('/', (c) => {
+  return c.text('The service is up and running.');
+})
+
 app.get('/course/:id', async (c) => {
   const id = c.req.param("id");
 
